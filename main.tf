@@ -184,7 +184,7 @@ module "s3_log_storage_bucket" {
   access_log_bucket_name             = var.access_log_bucket_name
   access_log_bucket_prefix           = var.access_log_bucket_prefix
   s3_object_ownership                = var.s3_object_ownership
-  acl                                = var.acl
+  acl                                = var.acl != null ? var.acl : null
   context = module.this.context
 }
 
